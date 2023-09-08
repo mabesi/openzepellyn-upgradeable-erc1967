@@ -1,34 +1,35 @@
-# OPENZEPPELIN MULTI TOKEN ERC-1155
+# OPENZEPPELIN UPGRADEABLE PROXY ERC-1967
 
-A professional solidity Multitoken [ERC-1155 Standard](https://eips.ethereum.org/EIPS/eip-1155) contract example based on OpenZeppelin library.
+A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ethereum.org/EIPS/eip-1967) contract example based on OpenZeppelin library.
 
 ## :speech_balloon: Description
 
-<p align="justify">ERC-1155 is a widely adopted standard for fungible and non-fungible tokens on the Ethereum blockchain. It was proposed as an improvement to the ERC-20 and ERC-721 standards, combining the functionalities of both into a single standard.</p>
-<p align="justify">OpenZeppelin Contracts helps you minimize risk by using battle-tested libraries of smart contracts for Ethereum and other blockchains. It includes the most used implementations of ERC standards.</p>
-<p align="justify">This project is a simple implementation of OpenZepplein ERC-1155 standard, with the most important functionalities for an Multi Token Smart Contract, to help you save time in coding.</p>
+<p align="justify">An upgradeable smart contract uses a special feature called a "proxy pattern" that gives developers some leeway to modify contract logic post-deployment.</p>
+<p align="justify">Proxy Storage Slots are a consistent location where proxies store the address of the logic contract they delegate to, as well as other proxy-specific information.</p>
+<p align="justify">Delegating proxy contracts are widely used for both upgradeability and gas savings. These proxies rely on a logic contract (also known as implementation contract or master copy) that is called using delegatecall. This allows proxies to keep a persistent state (storage and balance) while the code is delegated to the logic contract.</p>
+<p align="justify">This project is a simple implementation of OpenZepplein ERC-1967 standard, with the most important functionalities for an Upgradeable Proxy Smart Contract, to help you save time in coding and have the most secure code as possible.</p>
 
 <table>
     <tr>
         <td colspan='2'>
             <kbd>
-                <img src="./assets/oppenzeppelin-erc1155-contract.png" />
+                <img src="./assets/oppenzeppelin-erc1967-contract.png" />
             </kbd>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="./assets/oppenzeppelin-erc1155-read.png" />
+            <img src="./assets/oppenzeppelin-erc1967-read.png" />
         </td>
         <td>
-            <img src="./assets/oppenzeppelin-erc1155-write.png" />
+            <img src="./assets/oppenzeppelin-erc1967-write.png" />
         </td>
     </tr>
 <table>
 
 ### 🛠️ Features
 
-The OpenZeppelin ERC-1155 Multi Token contract offers these main features:
+The OpenZeppelin ERC-1967 Upgradeable Proxy contract offers these main features:
 
 - **Multi-Token Support**: ERC-1155 contracts can manage multiple token types within a single contract. This means you can have both fungible (e.g., currencies) and non-fungible (e.g., unique assets) tokens managed together.
 - **Gas Efficiency**: ERC-1155 is designed to be gas-efficient by allowing batch transfers and batch approvals, reducing the number of individual transactions required.
