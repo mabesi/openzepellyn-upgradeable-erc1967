@@ -13,16 +13,16 @@ A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ether
     <tr>
         <td colspan='2'>
             <kbd>
-                <img src="./assets/oppenzeppelin-erc1967-contract.png" />
+                <img src="./assets/oz_proxy_erc1967_contract.png" />
             </kbd>
         </td>
     </tr>
     <tr>
         <td>
-            <img src="./assets/oppenzeppelin-erc1967-read.png" />
+            <img src="./assets/oz_proxy_erc1967_read.png" />
         </td>
         <td>
-            <img src="./assets/oppenzeppelin-erc1967-write.png" />
+            <img src="./assets/oz_proxy_erc1967_write.png" />
         </td>
     </tr>
 <table>
@@ -50,7 +50,7 @@ The core of this project was built using all these great tools:
 In addition, in order to function fully and satisfactorily, this project uses resources from the following services:
 
 - [Pinata](https://app.pinata.cloud/) - IPFS File Sharing
-- [SnowTrace](https://snowtrace.io/) - Avalanche C-Chain Block Explorer
+- [Polygon Scan](https://polygonscan.com/) - Polygon Block Explorer
 
 ## Getting Started
 
@@ -71,35 +71,34 @@ After this, adjust the `SECRET` with your seed phrase, `API_KEY` with your API K
 # MetaMask mnemonic 12-word phrase
 SECRET=
 
-# Blockchain API Key (get in EtherScan, BSC Scan, SnowTrace,...)
+# Blockchain API Key (get in EtherScan, BSC Scan, SnowTrace, Polygon,...)
 API_KEY=
 
-# RPC Server URL (e.g. "https://api.avax-test.network/ext/bc/C/rpc")
+# RPC Server URL (e.g. "https://polygon-mumbai-bor.publicnode.com")
 RPC_URL=
 
-# RPC Chain ID (e.g 43113)
+# RPC Chain ID (e.g 80001)
 CHAIN_ID=
 ```
 
-Change the `currentSupply` for the three token types initial supply and the `tokenPrice` for your desired initial value.
+Change the `maxSupply` for the three token types maximum supply and the `tokenPrice` for your desired initial value.
 
 ```solidity
-    uint[] public currentSupply = [50, 50, 50];
-    uint public tokenPrice = 0.01 ether;
+    function initialize() initializer public {
+        __ERC1155_init(BASE_URL);
+        __ERC1155Burnable_init();
+        __Ownable_init();
+        __ERC1155Supply_init();
+        // Change the tokenPrice and maxSupply as desired
+        tokenPrice = 0.001 ether;
+        maxSupply = 50;
+    } 
 ```
 
-After create the [Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-721#specification), adjust the `BASE_URI` address for your own address.
+After create the [Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-721#specification), adjust the `BASE_URL` address for your own address.
 
 ```solidity
-    string public constant BASE_URI = "ipfs://myuriaddress/";
-```
-
-And, finally, change the Contract URI metadata address:
-
-```solidity
-    function contractURI() public pure returns (string memory) {
-        return "ipfs://mycontracturiaddress/";
-    }
+    string public constant BASE_URL = "ipfs://mybaseurladdress/";
 ```
 
 ### 👨‍💻 Testing
@@ -122,6 +121,18 @@ To deploy your OpenZeppelin ERC-1155 smart contract run this command:
 
 ```bash
 $ npm run deploy
+```
+
+After deploy, put the deployed contract address inside the upgradeProxy() function, in the scripts/update.ts file:
+
+```solidity
+    const cc = await upgrades.upgradeProxy("DEPLOYED_CONTRACT_ADDRESS_HERE", OZMultiToken);
+```
+
+To update your OpenZeppelin ERC-1155 smart contract, after change the implementation, using Transparent Proxy schema run this command:
+
+```bash
+$ npm run update
 ```
 
 With the deployed contract address in the hands, run this command to verify it:
@@ -174,6 +185,7 @@ Enjoy these similar projects that can help you as a way of learning or as a basi
 - [Basic Azuki NFT ERC-721A](https://github.com/mabesi/azuki-nft)
 - [Mabesi Azuki NFT DApp](https://github.com/mabesi/dapp-nft)
 - [Basic Multi Token ERC-1155](https://github.com/mabesi/solidity-multitoken-erc1155)
+- [OpenZepppelin Multi Token ERC-1155](https://github.com/mabesi/openzeppelin-multitoken-erc1155)
 
 ### ✒️ Authors & Contributors
 

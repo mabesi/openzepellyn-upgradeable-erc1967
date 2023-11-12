@@ -36,7 +36,7 @@ contract OZMultiToken is Initializable, ERC1155Upgradeable, ERC1155BurnableUpgra
         __ERC1155Burnable_init();
         __Ownable_init();
         __ERC1155Supply_init();
-        tokenPrice = 0.001 ether;
+        tokenPrice = 0.01 ether;
         maxSupply = 50;
     }    
 
