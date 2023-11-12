@@ -117,7 +117,7 @@ $ npm run cov
 
 ### 👷 Deploy
 
-To deploy your OpenZeppelin ERC-1155 smart contract run this command:
+To deploy your OpenZeppelin ERC-1967 smart contract run this command:
 
 ```bash
 $ npm run deploy
@@ -129,7 +129,7 @@ After deploy, put the deployed contract address inside the `upgradeProxy()` func
     const cc = await upgrades.upgradeProxy("DEPLOYED_CONTRACT_ADDRESS_HERE", OZMultiToken);
 ```
 
-To update your OpenZeppelin ERC-1155 smart contract, after change the implementation, using Transparent Proxy schema run this command:
+To update your OpenZeppelin ERC-1967 smart contract, after change the implementation, using Transparent Proxy schema run this command:
 
 ```bash
 $ npm run update
