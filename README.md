@@ -161,7 +161,7 @@ You can interact with your deployed contract in two ways:
 - **Functions**: Look for a "Read Contract" or "Write Contract" section.
   - **Read Functions**: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
   - **Write Functions**: To interact with write functions (functions that modify the state), you will need to provide the necessary parameters and possibly your wallet's signature for authentication. After filling in the required details, submit the transaction.
-  - **IMPORTANT**: To interact correctly with the functions you must use the `Read as Proxy` and `Write as Proxy` interfaces.
+    - **IMPORTANT**: To interact correctly with the functions you must use the `Read as Proxy` and `Write as Proxy` interfaces.
 - **Transaction Monitoring**: Block explorers also provide real-time transaction monitoring. After initiating a contract function execution, the explorer will display the transaction details, including the transaction hash, status, and gas fees.
 
 _It's essential to be cautious when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs._
