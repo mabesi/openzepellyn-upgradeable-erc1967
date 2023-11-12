@@ -7,7 +7,7 @@ A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ether
 <p align="justify">An upgradeable smart contract uses a special feature called a "proxy pattern" that gives developers some leeway to modify contract logic post-deployment.</p>
 <p align="justify">Proxy Storage Slots are a consistent location where proxies store the address of the logic contract they delegate to, as well as other proxy-specific information.</p>
 <p align="justify">Delegating proxy contracts are widely used for both upgradeability and gas savings. These proxies rely on a logic contract (also known as implementation contract or master copy) that is called using delegatecall. This allows proxies to keep a persistent state (storage and balance) while the code is delegated to the logic contract.</p>
-<p align="justify">This project is a simple implementation of OpenZepplein ERC-1967 standard, with the most important functionalities for an Upgradeable Proxy Smart Contract, to help you save time in coding and have the most secure code as possible.</p>
+<p align="justify">This project is a simple implementation of OpenZeppElin ERC-1967 standard, with the most important functionalities for an Upgradeable Proxy Smart Contract, to help you save time in coding and have the most secure code as possible.</p>
 
 <table>
     <tr>
@@ -123,7 +123,7 @@ To deploy your OpenZeppelin ERC-1155 smart contract run this command:
 $ npm run deploy
 ```
 
-After deploy, put the deployed contract address inside the upgradeProxy() function, in the scripts/update.ts file:
+After deploy, put the deployed contract address inside the `upgradeProxy()` function, in the `scripts/update.ts` file:
 
 ```solidity
     const cc = await upgrades.upgradeProxy("DEPLOYED_CONTRACT_ADDRESS_HERE", OZMultiToken);
@@ -141,6 +141,12 @@ With the deployed contract address in the hands, run this command to verify it:
 $ npm run verify <contract_address>
 ```
 
+If you hava placed the deployed contract address in the `upgradeProxy()` function, simple run this command to verify all contracts:
+
+```bash
+$ npm run verify
+```
+
 ### :arrow_forward: Usage
 
 You can interact with your deployed contract in two ways:
@@ -153,6 +159,7 @@ You can interact with your deployed contract in two ways:
 - **Functions**: Look for a "Read Contract" or "Write Contract" section.
   - **Read Functions**: For read-only functions (functions that don't modify the state), you can call them directly from the block explorer's interface, and it will display the returned value.
   - **Write Functions**: To interact with write functions (functions that modify the state), you will need to provide the necessary parameters and possibly your wallet's signature for authentication. After filling in the required details, submit the transaction.
+  - **IMPORTANT**: To interact correctly with the functions you must use the `Read as Proxy` and `Write as Proxy` interfaces.
 - **Transaction Monitoring**: Block explorers also provide real-time transaction monitoring. After initiating a contract function execution, the explorer will display the transaction details, including the transaction hash, status, and gas fees.
 
 _It's essential to be cautious when executing write functions, as blockchain transactions are irreversible. Always double-check the inputs._
