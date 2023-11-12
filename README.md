@@ -33,10 +33,8 @@ A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ether
 
 The OpenZeppelin ERC-1967 Upgradeable Proxy contract offers these main features:
 
-- **Multi-Token Support**: ERC-1155 contracts can manage multiple token types within a single contract. This means you can have both fungible (e.g., currencies) and non-fungible (e.g., unique assets) tokens managed together.
-- **Gas Efficiency**: ERC-1155 is designed to be gas-efficient by allowing batch transfers and batch approvals, reducing the number of individual transactions required.
-- **Single Contract, Multiple Tokens**: Unlike other token standards like ERC-20 or ERC-721, which require separate contracts for each token, ERC-1155 allows you to manage multiple token types under a single contract, reducing deployment and maintenance costs.
-- **Interface Compatibility**: ERC-1155 adheres to a standard interface, ensuring compatibility with various applications, marketplaces, and wallets that support this standard.
+- **Cost Reduction**: The ERC-1967 standard is a sophisticated proxy model that optimizes deployment costs and gas usage by recording the deployment address in a single storage slot within the proxy contract.
+- **Upgradeable**: The proxy pattern allows writing a contract that is upgradable post-deployment, as information is stored in the main contract, not in the implementation contract.
 
 ### 🏗️ Built With
 
