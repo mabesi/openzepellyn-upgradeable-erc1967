@@ -7,7 +7,7 @@ A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ether
 <p align="justify">An upgradeable smart contract uses a special feature called a "proxy pattern" that gives developers some leeway to modify contract logic post-deployment.</p>
 <p align="justify">Proxy Storage Slots are a consistent location where proxies store the address of the logic contract they delegate to, as well as other proxy-specific information.</p>
 <p align="justify">Delegating proxy contracts are widely used for both upgradeability and gas savings. These proxies rely on a logic contract (also known as implementation contract or master copy) that is called using delegatecall. This allows proxies to keep a persistent state (storage and balance) while the code is delegated to the logic contract.</p>
-<p align="justify">This project is a simple implementation of OpenZeppElin ERC-1967 standard, with the most important functionalities for an Upgradeable Proxy Smart Contract, to help you save time in coding and have the most secure code as possible.</p>
+<p align="justify">This project is a simple implementation of ERC-1155 Multi Token using the OpenZeppElin ERC-1967 standard, with the most important functionalities for an Upgradeable Proxy Smart Contract, to help you save time in coding and have the most secure code as possible.</p>
 
 <table>
     <tr>
