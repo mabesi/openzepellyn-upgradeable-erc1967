@@ -143,7 +143,7 @@ With the deployed contract address in the hands, run this command to verify it:
 $ npm run verify <contract_address>
 ```
 
-If you hava placed the deployed contract address in the `upgradeProxy()` function, simple run this command to verify all contracts:
+If you have placed the deployed contract address in the `upgradeProxy()` function, simple run this command to verify all contracts after updating:
 
 ```bash
 $ npm run verify
