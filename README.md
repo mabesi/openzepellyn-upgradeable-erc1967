@@ -27,7 +27,7 @@ A professional solidity Upgradeable Proxy [ERC-1967 Standard](https://eips.ether
     </tr>
 <table>
 
-[Click here](https://mumbai.polygonscan.com/address/0x0b9a65cc2bb4b4c25834c6e943478beb1d9da590#code){:target="_blank"} to see this implementation on Mumbai Testnet (Polygon Testnet).
+[Click here](https://mumbai.polygonscan.com/address/0x0b9a65cc2bb4b4c25834c6e943478beb1d9da590#code) to see this implementation on Mumbai Testnet (Polygon Testnet).
 
 ### 🛠️ Features
 
