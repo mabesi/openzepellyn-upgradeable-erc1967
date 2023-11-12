@@ -90,7 +90,7 @@ Change the `maxSupply` for the three token types maximum supply and the `tokenPr
         __Ownable_init();
         __ERC1155Supply_init();
         // Change the tokenPrice and maxSupply as desired
-        tokenPrice = 0.001 ether;
+        tokenPrice = 0.01 ether;
         maxSupply = 50;
     } 
 ```
