@@ -36,7 +36,7 @@ contract OZMultiToken is Initializable, ERC1155Upgradeable, ERC1155BurnableUpgra
         __ERC1155Burnable_init();
         __Ownable_init();
         __ERC1155Supply_init();
-        tokenPrice = 0.01 ether;
+        tokenPrice = 0.001 ether;
         maxSupply = 50;
     }    
 
@@ -70,6 +70,10 @@ contract OZMultiToken is Initializable, ERC1155Upgradeable, ERC1155BurnableUpgra
         address payable recipent = payable(owner());
         (bool success,) = recipent.call{value: amount}("");
         require(success == true, "Failed to withdraw");
+    }
+
+    function getBalance() external view returns (uint256) {
+        return address(this).balance;
     }
 
 }

@@ -8,7 +8,8 @@
     "cov": "npx hardhat coverage",
     "compile": "npx hardhat compile",
     "deploy": "npx hardhat run scripts/deploy.ts --network mumbai",
-    "update": "npx hardhat run scripts/update.ts --network mumbai"
+    "update": "npx hardhat run scripts/update.ts --network mumbai",
+    "verify": "npx hardhat verify --network mumbai"
   },
   "keywords": [],
   "author": "Plinio Mabesi",
